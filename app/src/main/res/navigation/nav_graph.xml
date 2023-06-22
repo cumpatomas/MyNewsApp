@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/newItemFragment"
+        android:name="com.example.mynewsapp.ui.new_item_fragment.NewItemFragment"
+        android:label="NewItemFragment"
+        tools:layout="@layout/newitemfragment">
+        <argument
+            android:name="newUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mynewsapp.ui.homefragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_newItemFragment"
+            app:destination="@id/newItemFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+</navigation>
